@@ -482,3 +482,18 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# Ignorar artefactos generados por Selenium
+Screenshots/
+Screenshots/*.png
+
+Reports/
+Reports/*.html
+
+TestResults/
+
+# Ignorar drivers de Selenium descargados automáticamente
+chromedriver.exe
+geckodriver.exe
+msedgedriver.exe
+
