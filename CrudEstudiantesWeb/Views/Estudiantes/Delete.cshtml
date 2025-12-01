@@ -1,0 +1,23 @@
+﻿@model CrudEstudiantesWeb.Models.Estudiante
+
+@{
+    ViewData["Title"] = "Eliminar Estudiante";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>¿Estás seguro que deseas eliminar este estudiante?</h3>
+
+<div>
+    <p><strong>Id:</strong> @Model.Id</p>
+    <p><strong>Matrícula:</strong> @Model.Matricula</p>
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+    <p><strong>Carrera:</strong> @Model.Carrera</p>
+    <p><strong>Correo:</strong> @Model.Correo</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

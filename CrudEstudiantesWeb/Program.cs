@@ -28,8 +28,9 @@ namespace CrudEstudiantesWeb
             app.UseAuthorization();
 
             app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Estudiantes}/{action=Index}/{id?}");
+            name: "default",
+             pattern: "{controller=Estudiantes}/{action=Index}/{id?}");
+
 
             app.Run();
         }
