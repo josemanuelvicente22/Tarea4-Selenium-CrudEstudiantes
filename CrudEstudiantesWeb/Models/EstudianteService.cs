@@ -15,6 +15,22 @@
             return _estudiantes.FirstOrDefault(e => e.Id == id);
         }
 
+        // 👇 NUEVO: verificar duplicados
+
+        public bool MatriculaExiste(string matricula, int? idExcluir = null)
+        {
+            return _estudiantes.Any(e =>
+                e.Matricula == matricula &&
+                (!idExcluir.HasValue || e.Id != idExcluir.Value));
+        }
+
+        public bool CorreoExiste(string correo, int? idExcluir = null)
+        {
+            return _estudiantes.Any(e =>
+                e.Correo == correo &&
+                (!idExcluir.HasValue || e.Id != idExcluir.Value));
+        }
+
         public void Create(Estudiante estudiante)
         {
             estudiante.Id = _nextId++;

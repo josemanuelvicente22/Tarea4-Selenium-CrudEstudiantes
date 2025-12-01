@@ -5,21 +5,34 @@ namespace CrudEstudiantesWeb.Controllers
 {
     public class AccountController : Controller
     {
+        // Credenciales fijas
         private const string USER = "admin";
         private const string PASS = "admin123";
 
         public IActionResult Login()
         {
+            // Si ya está logueado, lo mando al listado
+            if (HttpContext.Session.GetString("IsLoggedIn") == "true")
+            {
+                return RedirectToAction("Index", "Estudiantes");
+            }
+
             return View(new LoginViewModel());
         }
 
         [HttpPost]
         public IActionResult Login(LoginViewModel model)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
             if (model.Usuario == USER && model.Clave == PASS)
             {
-                // Por simplicidad, guardamos un flag en sesión
                 HttpContext.Session.SetString("IsLoggedIn", "true");
+                HttpContext.Session.SetString("Usuario", model.Usuario);
+
                 return RedirectToAction("Index", "Estudiantes");
             }
 

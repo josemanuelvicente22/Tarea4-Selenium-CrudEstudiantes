@@ -9,6 +9,15 @@ namespace CrudEstudiantesWeb
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddSingleton<CrudEstudiantesWeb.Models.EstudianteService>();
+            builder.Services.AddDistributedMemoryCache();
+
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
 
             var app = builder.Build();
 
@@ -22,6 +31,8 @@ namespace CrudEstudiantesWeb
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseRouting();
 

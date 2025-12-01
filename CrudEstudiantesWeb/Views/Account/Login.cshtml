@@ -1,0 +1,36 @@
+﻿@model CrudEstudiantesWeb.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Iniciar sesión";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Login" method="post">
+    <div class="mb-3">
+        <label asp-for="Usuario" class="form-label"></label>
+        <input asp-for="Usuario" class="form-control" id="Usuario" />
+        <span asp-validation-for="Usuario" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Clave" class="form-label"></label>
+        <input asp-for="Clave" class="form-control" id="Clave" type="password" />
+        <span asp-validation-for="Clave" class="text-danger"></span>
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.MensajeError))
+    {
+        <div class="alert alert-danger">
+            @Model.MensajeError
+        </div>
+    }
+
+    <button type="submit" class="btn btn-primary">Entrar</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -12,6 +12,7 @@
     <div class="mb-3">
         <label asp-for="Matricula" class="form-label"></label>
         <input asp-for="Matricula" class="form-control" id="Matricula" />
+        <span asp-validation-for="Matricula" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Nombre" class="form-label"></label>
@@ -24,8 +25,14 @@
     <div class="mb-3">
         <label asp-for="Correo" class="form-label"></label>
         <input asp-for="Correo" class="form-control" id="Correo" />
+        <span asp-validation-for="Correo" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Guardar cambios</button>
     <a asp-action="Index" class="btn btn-secondary">Volver</a>
 </form>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
