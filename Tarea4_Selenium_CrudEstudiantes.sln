@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36623.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudEstudiantesWeb", "CrudEstudiantesWeb\CrudEstudiantesWeb.csproj", "{1C45E1BB-F2E2-405B-AF93-A5293D999C29}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudEstudiantesWeb.Tests", "CrudEstudiantesWeb.Tests\CrudEstudiantesWeb.Tests.csproj", "{01F18351-7A3A-4301-AEAE-DC3F157E10F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1C45E1BB-F2E2-405B-AF93-A5293D999C29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C45E1BB-F2E2-405B-AF93-A5293D999C29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C45E1BB-F2E2-405B-AF93-A5293D999C29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01F18351-7A3A-4301-AEAE-DC3F157E10F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F18351-7A3A-4301-AEAE-DC3F157E10F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F18351-7A3A-4301-AEAE-DC3F157E10F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F18351-7A3A-4301-AEAE-DC3F157E10F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
